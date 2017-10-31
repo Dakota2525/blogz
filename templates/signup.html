@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Register for Blog</h1>
-<form action="/register" method="post">
+<h1>Signup</h1>
+<form action="/signup" method="post">
     <table>
         <tr>
-            <td><label for="email">Email</label></td>
+            <td><label for="username">Username</label></td>
             <td>
-                <input name="email" type="email" value="{{ email }}">
+                <input name="username" type="text" value="{{ username }}">
             </td>
         </tr>
         <tr>
@@ -23,6 +23,6 @@
             </td>
         </tr>
     </table>
-    <input type="submit" value="Register">
+    <input type="submit" value="Submit">
 </form>
 {% endblock %}

@@ -14,16 +14,32 @@
     <nav>
     
     <div>
-        <a href='/blog'>Main Blog PAGE</a>
+        <a href='/blog'>Home</a>
     </div>
-    
+        <div>
+            <a href='/blog'>All Posts</a>
+        </div>
+
     <div>
-        <a href='/newpost'>New Blog Entry</a>
+        <a href='/newpost'>New Post</a>
          {% if error %}
                 <title class='error'>{{ blog_title_error }}</title>
                 <body class='error'>{{ blog_body_error }}</body>
             {% endif %}
     </div>
+
+    <div>
+        <a href='/logout'>Log out</a>
+    </div>
+
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+        {% for category,message in messages %}
+            <li class="{{error}}">{{message}}</li>
+        {% endfor %}
+        </ul>
+        {% endwith %}
+    
 
     </nav>
 

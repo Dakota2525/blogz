@@ -1,36 +1,17 @@
 {% extends "base.html" %}
     
     {% block content %}
-    <h1>Build a Blog</h1>
+    <h1>Blog Users!</h1>
 
-    <!--{% with messages = get_flashed_messages(with_categories=True) %}
-     {% endwith %} --> 
+     
      <ul>
     {% for blog in blogs %}
         <a href='/blog?id={{blog.id}}'><h2>{{blog.title}}</h2></a>
-        <p>{{blog.body}}</p>
+        <p>{{blog.body}}</p><br>
+        <p><h6>written by<a href='/blog?user={{blog.owner.id}}'>{{blog.owner.username}}</a></h6></p>
     {% endfor %}
     </ul>
-
-   
-       <!-- <h1>Log in to Blog</h1>
-        <p>If you don't have an account, you may <a href="/register">register</a> for one</p>
-        <form action="/login" method="post">
-            <table>
-                <tr>
-                    <td><label for="email">Email</label></td>
-                    <td>
-                        <input name="email" type="email" value="{{ email }}">
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="password">Password</label></td>
-                    <td>
-                        <input name="password" type="password">
-                    </td>
-                </tr> 
-            </table>
-            <input type="submit" value="Login"> 
-        -->
+  
+       
     {% endblock %}
     
